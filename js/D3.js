@@ -235,18 +235,14 @@ console.log(starWarsCharacters)
   Una volta fatto crea un console.log per controllare la proprietà length di "characters" prima e dopo l'operazione.
 */
 
-const newCharacters = [];
 
-for (let i = 0; i < characters.length; i++) {
-  for (let j = 0; j < femaleCharacters.length; j++) {
-    if (characters[i] === femaleCharacters[j]) {
-      newCharacters.push(femaleCharacters[j]);
-    }
+for (let i = characters.length - 1; i >= 0; i--) {
+  let character = characters[i];
+  if (!femaleCharacters.includes(character)) {
+    characters.splice(i, 1);
   }
-
 }
 
-characters = newCharacters
 
 console.log('Female characters: ' + femaleCharacters)
 
